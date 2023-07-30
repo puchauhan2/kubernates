@@ -2,6 +2,7 @@ https://www.geeksforgeeks.org/kubectl-cheatsheet/?ref=lbp
 
 kubectl get pods
 kubectl get service
+kubectl get secrets
 kubectl apply -f [fileName]
 kubectl create deployment nginx-demo --image=nginx 
 kubectl get deployment
