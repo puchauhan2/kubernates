@@ -3,6 +3,10 @@ https://www.geeksforgeeks.org/kubectl-cheatsheet/?ref=lbp
 kubectl get pods
 kubectl get service
 kubectl describe service mongodb-service
+kubectl get pod -o wide
+kubectl get ns
+kubectl get all -n kubernetes-dashboard
+
 
 kubectl get secrets
 kubectl apply -f [fileName]
@@ -21,8 +25,15 @@ kubectl get pods -l app=nginx-demo
 kubectl delete deployment nginx-demo
 kubectl get pod -o wide
 kubectl get deployment nginx-demo -o yaml
+kubectl get svc jenkins-service
+kubectl get pods -l app=jenkins
+kubectl exec -it jenkins-597c64cc66-r9c5d  /bin/bash
+
+
+minikube service mongo-express-service to launch applucation in browsers
 
 #Namespace operation (https://www.geeksforgeeks.org/kubernetes-namespaces/)
+kubens app to change namespace
 
 Benefits of Using Kubernetes Namespaces 
 	Isolation of resources for different teams:
