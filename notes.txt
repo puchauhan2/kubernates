@@ -16,6 +16,7 @@ kubectl get replicaset
 kubectl describe replicaset my-replicaset
 kubectl delete rs <name of the replicaset>
 kubectl scale rs <name of replicaset> --replicas=5 # to scale replicaset
+kubectl scale deployment webserver --replicas=4
 
 kubectl edit deployment nginx-demo
 kubectl logs nginx-demo-98c8d48ff-bsqx4 
@@ -30,10 +31,14 @@ kubectl get pods -l app=jenkins
 kubectl exec -it jenkins-597c64cc66-r9c5d  /bin/bash
 
 
+minikube ssh
+minikube service webserver --url
+
 minikube service mongo-express-service to launch applucation in browsers
 
 #Namespace operation (https://www.geeksforgeeks.org/kubernetes-namespaces/)
 kubens app to change namespace
+https://computingforgeeks.com/install-minikube-kubernetes-rocky-linux-9/?expand_article=1
 
 Benefits of Using Kubernetes Namespaces 
 	Isolation of resources for different teams:
