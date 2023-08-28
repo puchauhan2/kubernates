@@ -51,4 +51,4 @@ kubectl create namespace your-namespace
 kubectl apply -f your_config.yaml --namespace=your-namespace
 
 
-Doppler to use secreat in k8
+Doppler to use secreat in k8 ans same foe azore keyword
