@@ -30,6 +30,10 @@ kubectl get svc jenkins-service
 kubectl get pods -l app=jenkins
 kubectl exec -it jenkins-597c64cc66-r9c5d  /bin/bash
 
+Port Forward Command:
+
+kubectl port-forward nginx-6799fc88d8-4kn75 8080:80  expose port 8080 for nginx
+
 
 minikube ssh
 minikube service webserver --url

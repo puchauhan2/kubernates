@@ -1,0 +1,8 @@
+Control plane = Master note
+Master node can be many
+Scheduler schedule the pod
+kubelet stay on each node and get command from api server and execte operation
+etcd -- k8 database
+Container runtime = docker
+kube-controller-manager - maintain pod state
+kube-controller-manager - contains volume controller manager,namespace cotroller manager ,replication controller 
