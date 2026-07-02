@@ -1,0 +1,33 @@
+
+replicaCount: 3
+
+image:
+  repository: wordpress
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 80
+  nodePort: 31111
+
+mysql:
+  image:
+    repository: mysql
+    tag: "8.0"
+    pullPolicy: IfNotPresent
+
+  replicas: 1
+  database: wordpress
+  user: wpuser
+  password: password123
+  rootPassword: root123
+
+  storage:
+    size: 5Gi
+    storageClass: standard
+    
+ingress:
+  enabled: true
+  className: nginx
+  host: wordpress.local

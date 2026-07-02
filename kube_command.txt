@@ -1,0 +1,70 @@
+####### pod common command ######
+
+kubectl get deployments -A
+kubectl get replicasets -A
+kubectl get pods -A
+kubectl get pods --show-labels
+kubectl describe pod <pod-name>
+
+####### Network Command ######
+
+kubectl get endpoints
+kubectl get endpointslices
+kubectl get endpoints <Service_name>
+
+
+kubectl get ns = kubectl get namespace
+kubectl config view --minify | grep namespace
+kubectl config set-context --current --namespace=wordpress # set default namespace
+
+kubectl get configmap
+kubectl describe configmap wordpress-config
+
+kubectl get secret
+
+kubectl rollout restart deployment wordpress ## after modifying config or secreat file we have to run this command to load new value
+OR
+Re-run deployment : kubectl apply -f wordpress-deployment.yaml ## Kubernetes creates new Pods, and those new Pods read the latest ConfigMap.
+
+MySQL
+   │
+   ├── Stable Network Identity
+   ├── Persistent Storage
+   ├── Stable Pod Name
+   └── Stable DNS
+
+kubectl apply -f mysql-pvc.yaml
+kubectl describe pvc mysql-pvc
+kubectl get pv
+kubectl describe pvc mysql-pvc
+
+
+kubectl delete pod <one-wordpress-pod-name> -n wordpress  ## delete pod under given namespace
+
+kubectl scale statefulset mysql --replicas=2 -n wordpress ## increasing replica
+
+kubectl get pods --show-labels -n wordpress # show label under namespace
+
+kubectl describe svc wordpress-service -n wordpress
+
+kubectl get all
+
+kubectl get ingress
+
+helm list
+
+helm install myblog . --namespace wordpress  ##  mention namespace all time 
+
+kubectl get endpoints -n ingress-nginx
+
+helm list -A
+
+############ Helm ###############
+
+
+helm template wordpress .  ## dry run, disply template after replacing value
+
+
+Jogibaba#@2023
+
+
