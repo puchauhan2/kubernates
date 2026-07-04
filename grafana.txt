@@ -1,0 +1,51 @@
+Access Grafana
+
+Let's expose Grafana so you can see the dashboards.
+
+First, check the Grafana Service:
+
+kubectl get svc monitoring-grafana -n monitoring
+
+You will probably see:
+
+TYPE = ClusterIP
+
+Since you're using Minikube, the easiest way is to port-forward it:
+
+kubectl port-forward svc/monitoring-grafana 3000:80 -n monitoring
+
+Then open:
+
+http://localhost:3000
+Get the Grafana Password
+
+Retrieve the admin password:
+
+kubectl get secret monitoring-grafana \
+  -n monitoring \
+  -o jsonpath="{.data.admin-password}" | base64 -d
+
+Username:
+
+admin
+
+Password:
+
+(the output of the above command)
+What We'll Learn Next
+
+Once you're logged in, we'll explore:
+
+Prometheus Targets
+How Prometheus discovers Node Exporter, kube-state-metrics, and Kubernetes components.
+PromQL
+
+Learn queries like:
+
+up
+node_cpu_seconds_total
+kube_pod_info
+Monitoring Your WordPress Application
+Why Prometheus currently doesn't collect WordPress metrics.
+How to expose a /metrics endpoint.
+How to create a ServiceMonitor so Prometheus discovers it automatically.
