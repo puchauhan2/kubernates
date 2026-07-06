@@ -51,6 +51,13 @@ spec:
         volumeMounts:
         - name: mysql-storage
           mountPath: /var/lib/mysql
+        resources:
+          requests:
+            cpu: {{ .Values.mysqlresources.requests.cpu | quote }}
+            memory: {{ .Values.resources.requests.memory | quote }}
+          limits:
+            cpu: {{ .Values.mysqlresources.limits.cpu | quote }}
+            memory: {{ .Values.resources.limits.memory | quote }}
 
   volumeClaimTemplates:
 
@@ -67,4 +74,6 @@ spec:
       resources:
         requests:
           storage: {{ .Values.mysql.storage.size }}
+          
+
 

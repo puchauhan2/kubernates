@@ -104,6 +104,13 @@ Get your grafana admin user password by running:
   kubectl get secret --namespace monitoring -l app.kubernetes.io/component=admin-secret -o jsonpath="{.items[0].data.admin-password}" | base64 --decode ; echo
 
 
-Visit https://github.com/prometheus-operator/kube-prometheus for instructions on how to create & configure Alertmanager and Prometheus instances using the Operator.
-(base) puneet@localhost:~$ 
+Visit https://github.com/prometheus-operator/kube-prometheus for instructions on how to create & configure Alertmanager and Prometheus instances using the Operator
 
+kubectl port-forward svc/monitoring-grafana 4000:80 -n monitoring ## port forwarding
+
+kubectl exec -it myblog-mysql-0 -n wordpress -- /bin/bash  ## login to pod /bin/bash
+
+kubectl get pods -A -o wide ## print all pod with IP
+
+
+32ciR$i#89vef#$mvekLKesjyh
